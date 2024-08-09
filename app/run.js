@@ -10,17 +10,17 @@ import image from 'terminal-image';
 import {
     DICE_DEFAULT_COUNT,
     DICE_HEIGHT,
-    DICE_PICTURES_PATH,
+    DICE_PICTURES_FOLDER,
     EXIT_CTRL_MODIFIER,
     EXIT_EXTRA_KEY,
     texts,
 } from './utils/config.js';
 import {getRandomArrElem} from './utils/helpers.js';
 
-const imgFolderAbs = path.join(process.cwd(), DICE_PICTURES_PATH);
+const imgFolderAbs = path.join(import.meta.dirname, DICE_PICTURES_FOLDER);
 
 const imgFiles = await fs.readdir(imgFolderAbs);
-const imgFilesAbs = imgFiles.map(img => path.join(DICE_PICTURES_PATH, img));
+const imgFilesAbs = imgFiles.map(img => path.join(imgFolderAbs, img));
 
 emitKeypressEvents(process.stdin);
 
