@@ -19,9 +19,9 @@ export default {
 
     messages: {
         welcome: green([
-            '— enter any digit to generate that number of dice',
-            '— press any key to repeat the previous count generation',
-            `— press ${bold('CTRL+C')} or enter '${bold(EXIT_EXTRA_KEY)}' to exit`,
+            '— type any digit to generate that number of dice',
+            '— press any key to reroll dice',
+            `— press ${bold('CTRL+C')} or type '${bold(EXIT_EXTRA_KEY)}' to exit`,
         ].join('\n')),
     },
 };
