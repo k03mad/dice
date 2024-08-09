@@ -7,38 +7,28 @@ import {emitKeypressEvents} from 'node:readline';
 import {log} from '@k03mad/simple-log';
 import image from 'terminal-image';
 
-import {
-    DICE_DEFAULT_COUNT,
-    DICE_HEIGHT,
-    DICE_PICTURES_FOLDER,
-    EXIT_CTRL_MODIFIER,
-    EXIT_EXTRA_KEY,
-    texts,
-} from './utils/config.js';
+import config from './utils/config.js';
 import {getRandomArrElem} from './utils/helpers.js';
 
-const imgFolderAbs = path.join(import.meta.dirname, DICE_PICTURES_FOLDER);
+const imgFolderAbs = path.join(import.meta.dirname, config.dice.picturesFolder);
 
 const imgFiles = await fs.readdir(imgFolderAbs);
 const imgFilesAbs = imgFiles.map(img => path.join(imgFolderAbs, img));
 
 emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
 
-if (process.stdin.isTTY) {
-    process.stdin.setRawMode(true);
-}
-
-let diceCurrentCount = DICE_DEFAULT_COUNT;
-log(texts.message);
+let diceCurrentCount = config.dice.defaultCount;
+log(config.messages.welcome);
 
 process.stdin.on('keypress', async (char, key) => {
     if (
-        (key.ctrl === true && key.name === EXIT_CTRL_MODIFIER)
-        || char === EXIT_EXTRA_KEY
+        (key.ctrl === true && key.name === config.exit.ctrlKeyModifier)
+        || char === config.exit.extraKey
     ) {
         process.exit();
     } else {
-        log(texts.delimiter);
+        log(config.dice.separator);
     }
 
     diceCurrentCount = Number(char) || diceCurrentCount;
@@ -46,7 +36,7 @@ process.stdin.on('keypress', async (char, key) => {
     const output = await Promise.all(
         Array.from({length: diceCurrentCount}, () => {
             const diceImg = getRandomArrElem(imgFilesAbs);
-            return image.file(diceImg, {height: DICE_HEIGHT});
+            return image.file(diceImg, {height: config.dice.height});
         }),
     );
 

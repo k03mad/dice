@@ -2,18 +2,26 @@ import chalk from 'chalk';
 
 const {green, dim, bold} = chalk;
 
-export const DICE_DEFAULT_COUNT = 1;
-export const DICE_PICTURES_FOLDER = 'png';
-export const DICE_HEIGHT = '30%';
+const EXIT_EXTRA_KEY = 'q';
 
-export const EXIT_CTRL_MODIFIER = 'c';
-export const EXIT_EXTRA_KEY = 'q';
+export default {
+    dice: {
+        defaultCount: 1,
+        picturesFolder: 'png',
+        height: '30%',
+        separator: dim('>\n'),
+    },
 
-export const texts = {
-    message: green([
-        '— enter any digit to generate this count of dices',
-        '— press any key to repeat previous count generating',
-        bold(`— press "CTRL+C" or enter "${EXIT_EXTRA_KEY}" to exit`),
-    ].join('\n')),
-    delimiter: dim('——————————————\n'),
+    exit: {
+        ctrlKeyModifier: 'c',
+        extraKey: EXIT_EXTRA_KEY,
+    },
+
+    messages: {
+        welcome: green([
+            '— enter any digit to generate that number of dice',
+            '— press any key to repeat the previous count generation',
+            `— press ${bold('CTRL+C')} or enter '${bold(EXIT_EXTRA_KEY)}' to exit`,
+        ].join('\n')),
+    },
 };
