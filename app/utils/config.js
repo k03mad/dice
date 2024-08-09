@@ -3,7 +3,7 @@ import chalk from 'chalk';
 const {green, dim, bold} = chalk;
 
 export const DICE_DEFAULT_COUNT = 1;
-export const DICE_PICTURES_PATH = './app/png';
+export const DICE_PICTURES_PATH = 'app/png';
 export const DICE_HEIGHT = '30%';
 
 export const EXIT_CTRL_MODIFIER = 'c';

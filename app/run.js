@@ -17,8 +17,10 @@ import {
 } from './utils/config.js';
 import {getRandomArrElem} from './utils/helpers.js';
 
-const imgFiles = await fs.readdir(DICE_PICTURES_PATH);
-const imgPaths = imgFiles.map(img => path.join(process.cwd(), DICE_PICTURES_PATH, img));
+const imgFolderAbs = path.join(process.cwd(), DICE_PICTURES_PATH);
+
+const imgFiles = await fs.readdir(imgFolderAbs);
+const imgFilesAbs = imgFiles.map(img => path.join(DICE_PICTURES_PATH, img));
 
 emitKeypressEvents(process.stdin);
 
@@ -43,7 +45,7 @@ process.stdin.on('keypress', async (char, key) => {
 
     const output = await Promise.all(
         Array.from({length: diceCurrentCount}, () => {
-            const diceImg = getRandomArrElem(imgPaths);
+            const diceImg = getRandomArrElem(imgFilesAbs);
             return image.file(diceImg, {height: DICE_HEIGHT});
         }),
     );
