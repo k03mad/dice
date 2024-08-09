@@ -18,7 +18,7 @@ import {
 import {getRandomArrElem} from './utils/helpers.js';
 
 const imgFiles = await fs.readdir(DICE_PICTURES_PATH);
-const imgPaths = imgFiles.map(img => path.join(DICE_PICTURES_PATH, img));
+const imgPaths = imgFiles.map(img => path.join(process.cwd(), DICE_PICTURES_PATH, img));
 
 emitKeypressEvents(process.stdin);
 
