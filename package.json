@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Dice",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -15,7 +15,7 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "dependencies": {
     "@k03mad/simple-log": "4.2.0",
@@ -23,7 +23,7 @@
     "terminal-image": "3.0.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "25.6.0",
+    "@k03mad/eslint-config": "25.6.4",
     "eslint": "8.57.1",
     "husky": "9.1.6"
   },
