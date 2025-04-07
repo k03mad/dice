@@ -4,7 +4,6 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {emitKeypressEvents} from 'node:readline';
 
-import {log} from '@k03mad/simple-log';
 import image from 'terminal-image';
 
 import config from './utils/config.js';
@@ -19,7 +18,7 @@ emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 
 let diceCurrentCount = config.dice.defaultCount;
-log(config.messages.welcome);
+console.log(config.messages.welcome);
 
 process.stdin.on('keypress', async (char, key) => {
     if (
@@ -28,7 +27,7 @@ process.stdin.on('keypress', async (char, key) => {
     ) {
         process.exit();
     } else {
-        log(config.dice.separator);
+        console.log(config.dice.separator);
     }
 
     diceCurrentCount = Number(char) || diceCurrentCount;
@@ -40,5 +39,5 @@ process.stdin.on('keypress', async (char, key) => {
         }),
     );
 
-    log(output);
+    console.log(output.join('\n'));
 });
