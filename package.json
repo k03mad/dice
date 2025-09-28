@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "5.17.0",
+  "version": "5.17.1",
   "description": "Dice",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -15,15 +15,15 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.20"
   },
   "dependencies": {
-    "chalk": "5.6.0",
-    "terminal-image": "3.1.1"
+    "chalk": "5.6.2",
+    "terminal-image": "4.0.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "29.9.0",
-    "eslint": "9.34.0",
+    "@k03mad/eslint-config": "29.13.1",
+    "eslint": "9.36.0",
     "husky": "9.1.7"
   },
   "scripts": {
