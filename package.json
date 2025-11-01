@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "chalk": "5.6.2",
-    "terminal-image": "4.0.0"
+    "terminal-image": "4.1.0"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "29.13.2",
