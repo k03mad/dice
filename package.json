@@ -22,7 +22,7 @@
     "terminal-image": "4.1.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "29.14.0",
+    "@k03mad/eslint-config": "29.14.1",
     "eslint": "9.39.1",
     "husky": "9.1.7"
   },
