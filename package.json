@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Dice",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -22,7 +22,7 @@
     "terminal-image": "4.2.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "32.0.0",
+    "@k03mad/eslint-config": "33.0.0",
     "eslint": "9.39.2",
     "husky": "9.1.7"
   },
