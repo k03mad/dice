@@ -18,10 +18,12 @@ export default {
     },
 
     messages: {
-        welcome: green([
-            '— type any digit to generate that number of dice',
-            '— press any key to reroll dice',
-            `— press ${bold('CTRL+C')} or type '${bold(EXIT_EXTRA_KEY)}' to exit`,
-        ].join('\n')),
+        welcome: green(
+            [
+                '— type any digit to generate that number of dice',
+                '— press any key to reroll dice',
+                `— press ${bold('CTRL+C')} or type '${bold(EXIT_EXTRA_KEY)}' to exit`,
+            ].join('\n'),
+        ),
     },
 };

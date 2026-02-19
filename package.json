@@ -1,33 +1,34 @@
 {
   "name": "@k03mad/dice",
-  "version": "11.0.0",
+  "version": "10.1.1",
   "description": "Dice",
+  "license": "MIT",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
   ],
-  "bin": {
-    "dice": "app/run.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/k03mad/dice.git"
   },
-  "license": "MIT",
+  "bin": {
+    "dice": "app/run.js"
+  },
   "type": "module",
-  "engines": {
-    "node": ">=24"
+  "scripts": {
+    "lint": "oxlint --report-unused-disable-directives && oxfmt --check",
+    "prepare": "husky || true"
   },
   "dependencies": {
     "chalk": "5.6.2",
     "terminal-image": "4.2.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "34.1.0",
-    "eslint": "9.39.2",
-    "husky": "9.1.7"
+    "@k03mad/oxlint-config": "0.0.13",
+    "husky": "9.1.7",
+    "oxfmt": "0.34.0",
+    "oxlint": "1.49.0"
   },
-  "scripts": {
-    "lint": "eslint ./ --cache",
-    "prepare": "husky || true"
+  "engines": {
+    "node": ">=24"
   }
 }

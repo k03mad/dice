@@ -22,8 +22,8 @@ console.log(config.messages.welcome);
 
 process.stdin.on('keypress', async (char, key) => {
     if (
-        (key.ctrl === true && key.name === config.exit.ctrlKeyModifier)
-        || char === config.exit.extraKey
+        (key.ctrl === true && key.name === config.exit.ctrlKeyModifier) ||
+        char === config.exit.extraKey
     ) {
         process.exit();
     } else {
