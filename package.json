@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "10.1.1",
+  "version": "10.1.2",
   "description": "Dice",
   "license": "MIT",
   "maintainers": [
@@ -23,7 +23,7 @@
     "terminal-image": "4.2.0"
   },
   "devDependencies": {
-    "@k03mad/oxlint-config": "0.0.13",
+    "@k03mad/oxlint-config": "0.0.19",
     "husky": "9.1.7",
     "oxfmt": "0.34.0",
     "oxlint": "1.49.0"
