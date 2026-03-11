@@ -16,8 +16,8 @@ importers:
         version: 4.2.0
     devDependencies:
       '@k03mad/oxlint-config':
-        specifier: 0.3.0
-        version: 0.3.0
+        specifier: 0.3.1
+        version: 0.3.1
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -311,8 +311,8 @@ packages:
     resolution: {integrity: sha512-gqFTGEosKbOkYF/WFj26jMHOI5OH2jeP1MmC/zbK6BF6VJBf8rIC5898dPfSzZEbSA0wbbV5slbntWVc5PKLFA==}
     engines: {node: '>=18'}
 
-  '@k03mad/oxlint-config@0.3.0':
-    resolution: {integrity: sha512-jmz8mN7b3cEgPt0K6vF6eOrvBf42CGMBIXjZD8UrKJ6jgnrq007ZxRePiTLJDwNEwRAXc/CDFcggYltuJ7ulKw==}
+  '@k03mad/oxlint-config@0.3.1':
+    resolution: {integrity: sha512-wlU+4KkAAz099JMBmZXMNyYc/mTULTQm0F5tbuBK/4uaWwRTYg/H2+rw50OcXO4QaD8MQFLfQ7/t9Ivkus2u2Q==}
     engines: {node: '>=24'}
 
   '@oxfmt/binding-android-arm-eabi@0.38.0':
@@ -1456,7 +1456,7 @@ snapshots:
       '@jimp/types': 1.6.0
       tinycolor2: 1.6.0
 
-  '@k03mad/oxlint-config@0.3.0': {}
+  '@k03mad/oxlint-config@0.3.1': {}
 
   '@oxfmt/binding-android-arm-eabi@0.38.0':
     optional: true

@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "11.2.0",
+  "version": "11.2.1",
   "description": "Dice",
   "license": "MIT",
   "maintainers": [
@@ -15,7 +15,7 @@
   },
   "type": "module",
   "scripts": {
-    "lint": "oxlint --report-unused-disable-directives && oxfmt --check",
+    "lint": "oxlint && oxfmt --check",
     "prepare": "husky || true"
   },
   "dependencies": {
@@ -23,7 +23,7 @@
     "terminal-image": "4.2.0"
   },
   "devDependencies": {
-    "@k03mad/oxlint-config": "0.3.0",
+    "@k03mad/oxlint-config": "0.3.1",
     "husky": "9.1.7",
     "oxfmt": "0.38.0",
     "oxlint": "1.53.0"
