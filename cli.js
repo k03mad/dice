@@ -1,3 +1,3 @@
 #!/usr/bin/env node --import tsx
 
-await import('./app/run.ts');
+import './app/run.ts';
