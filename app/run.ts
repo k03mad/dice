@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {emitKeypressEvents} from 'node:readline';
