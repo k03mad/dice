@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "12.2.0",
+  "version": "12.3.0",
   "description": "Dice",
   "license": "MIT",
   "maintainers": [
@@ -20,17 +20,17 @@
   },
   "dependencies": {
     "chalk": "5.6.2",
-    "terminal-image": "4.3.0",
-    "tsx": "4.23.0"
+    "terminal-image": "5.0.1",
+    "tsx": "4.23.1"
   },
   "devDependencies": {
     "@k03mad/oxlint-config": "0.11.0",
     "@tsconfig/strictest": "2.0.8",
-    "@types/node": "26.1.0",
+    "@types/node": "26.1.1",
     "husky": "9.1.7",
-    "oxfmt": "0.57.0",
-    "oxlint": "1.72.0",
-    "typescript": "6.0.3"
+    "oxfmt": "0.59.0",
+    "oxlint": "1.74.0",
+    "typescript": "7.0.2"
   },
   "engines": {
     "node": ">=24"
