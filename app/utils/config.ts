@@ -7,8 +7,8 @@ const EXIT_EXTRA_KEY = 'q';
 export default {
   dice: {
     defaultCount: 1,
-    picturesFolder: 'png',
-    height: '30%',
+    scale: 1,
+    gap: 2,
     separator: dim('>\n'),
   },
 

@@ -1,16 +1,7 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import {emitKeypressEvents} from 'node:readline';
 
-import image from 'terminal-image';
-
+import {randomDieValue, renderDice} from './dice.ts';
 import config from './utils/config.ts';
-import {getRandomArrElem} from './utils/helpers.ts';
-
-const imgFolderAbs = path.join(import.meta.dirname, config.dice.picturesFolder);
-
-const imgFiles: string[] = await fs.readdir(imgFolderAbs);
-const imgFilesAbs = imgFiles.map(img => path.join(imgFolderAbs, img));
 
 emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
@@ -18,7 +9,7 @@ process.stdin.setRawMode(true);
 let diceCurrentCount: number = config.dice.defaultCount;
 console.log(config.messages.welcome);
 
-process.stdin.on('keypress', async (char: string, key: {ctrl: boolean; name: string}) => {
+process.stdin.on('keypress', (char: string, key: {ctrl: boolean; name: string}) => {
   if (
     (key.ctrl === true && key.name === config.exit.ctrlKeyModifier) ||
     char === config.exit.extraKey
@@ -30,12 +21,8 @@ process.stdin.on('keypress', async (char: string, key: {ctrl: boolean; name: str
 
   diceCurrentCount = Number(char) || diceCurrentCount;
 
-  const output = await Promise.all(
-    Array.from({length: diceCurrentCount}, () => {
-      const diceImg = getRandomArrElem(imgFilesAbs);
-      return image.file(diceImg, {height: config.dice.height});
-    }),
-  );
+  const values = Array.from({length: diceCurrentCount}, randomDieValue);
+  const options = process.stdout.columns === undefined ? {} : {maxWidth: process.stdout.columns};
 
-  console.log(output.join('\n'));
+  console.log(renderDice(values, config.dice.scale, options));
 });

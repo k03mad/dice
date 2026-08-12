@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "13.0.3",
+  "version": "13.0.4",
   "description": "Dice",
   "license": "MIT",
   "maintainers": [
@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "chalk": "6.0.0",
-    "terminal-image": "5.0.1",
     "tsx": "4.23.8"
   },
   "devDependencies": {
