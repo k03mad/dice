@@ -76,12 +76,10 @@ const die = (value: number): string => {
   return grid.map(line => line.join('')).join('\n');
 };
 
-export interface DiceRenderOptions {
-  readonly gap?: number;
-  readonly maxWidth?: number;
-}
-
-export const renderDice = (values: readonly number[], options: DiceRenderOptions = {}): string => {
+export const renderDice = (
+  values: readonly number[],
+  options: {readonly gap?: number; readonly maxWidth?: number} = {},
+): string => {
   const {gap = 2, maxWidth} = options;
 
   const faces = values.map(value => die(value).split('\n'));
