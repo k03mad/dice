@@ -1,7 +1,7 @@
 import {emitKeypressEvents} from 'node:readline';
 
+import config from './config.ts';
 import {randomDieValue, renderDice} from './dice.ts';
-import config from './utils/config.ts';
 
 emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
