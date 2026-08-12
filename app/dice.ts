@@ -34,18 +34,17 @@ const PIPS: Record<number, readonly (readonly [number, number])[]> = {
   ],
 };
 
-const die = (value: number, scale: number): string => {
+const WIDTH = 11;
+const HEIGHT = 5;
+
+const die = (value: number): string => {
   const pips = PIPS[value];
 
   if (pips === undefined) {
     throw new Error(`Invalid die value: ${value}`);
   }
 
-  const cellWidth = 2 * scale + 1;
-  const width = 3 * cellWidth + 2;
-  const height = 3 * cellWidth + 2;
-
-  const grid = Array.from({length: height}, () => Array.from({length: width}, () => ' '));
+  const grid = Array.from({length: HEIGHT}, () => Array.from({length: WIDTH}, () => ' '));
 
   const put = (x: number, y: number, ch: string): void => {
     const row = grid[y];
@@ -55,27 +54,23 @@ const die = (value: number, scale: number): string => {
     }
   };
 
-  for (let x = 0; x < width; x++) {
+  for (let x = 0; x < WIDTH; x++) {
     put(x, 0, '─');
-    put(x, height - 1, '─');
+    put(x, HEIGHT - 1, '─');
   }
 
-  for (let y = 0; y < height; y++) {
+  for (let y = 0; y < HEIGHT; y++) {
     put(0, y, '│');
-    put(width - 1, y, '│');
+    put(WIDTH - 1, y, '│');
   }
 
   put(0, 0, '┌');
-  put(width - 1, 0, '┐');
-  put(0, height - 1, '└');
-  put(width - 1, height - 1, '┘');
+  put(WIDTH - 1, 0, '┐');
+  put(0, HEIGHT - 1, '└');
+  put(WIDTH - 1, HEIGHT - 1, '┘');
 
   for (const [row, col] of pips) {
-    put(
-      1 + col * cellWidth + Math.floor(cellWidth / 2),
-      1 + row * cellWidth + Math.floor(cellWidth / 2),
-      PIP,
-    );
+    put(2 + col * 3, 1 + row, PIP);
   }
 
   return grid.map(line => line.join('')).join('\n');
@@ -86,14 +81,10 @@ export interface DiceRenderOptions {
   readonly maxWidth?: number;
 }
 
-export const renderDice = (
-  values: readonly number[],
-  scale: number,
-  options: DiceRenderOptions = {},
-): string => {
+export const renderDice = (values: readonly number[], options: DiceRenderOptions = {}): string => {
   const {gap = 2, maxWidth} = options;
 
-  const faces = values.map(value => die(value, scale).split('\n'));
+  const faces = values.map(value => die(value).split('\n'));
 
   const firstFace = faces[0];
 

@@ -22,7 +22,11 @@ process.stdin.on('keypress', (char: string, key: {ctrl: boolean; name: string}) 
   diceCurrentCount = Number(char) || diceCurrentCount;
 
   const values = Array.from({length: diceCurrentCount}, randomDieValue);
-  const options = process.stdout.columns === undefined ? {} : {maxWidth: process.stdout.columns};
 
-  console.log(renderDice(values, config.dice.scale, options));
+  const options =
+    process.stdout.columns === undefined
+      ? {}
+      : {gap: config.dice.gap, maxWidth: process.stdout.columns};
+
+  console.log(renderDice(values, options));
 });
