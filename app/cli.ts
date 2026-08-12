@@ -1,7 +1,35 @@
 import {emitKeypressEvents} from 'node:readline';
 
-import config from './config.ts';
+import chalk from 'chalk';
+
 import {randomDieValue, renderDice} from './dice.ts';
+
+const {green, dim, bold} = chalk;
+
+const EXIT_EXTRA_KEY = 'q';
+
+const config = {
+  dice: {
+    defaultCount: 1,
+    gap: 2,
+    separator: dim('>\n'),
+  },
+
+  exit: {
+    ctrlKeyModifier: 'c',
+    extraKey: EXIT_EXTRA_KEY,
+  },
+
+  messages: {
+    welcome: green(
+      [
+        '— type any digit to generate that number of dice',
+        '— press any key to reroll dice',
+        `— press ${bold('CTRL+C')} or type '${bold(EXIT_EXTRA_KEY)}' to exit`,
+      ].join('\n'),
+    ),
+  },
+} as const;
 
 emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
