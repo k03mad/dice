@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dice",
-  "version": "13.0.1",
+  "version": "13.0.2",
   "description": "Dice",
   "license": "MIT",
   "maintainers": [
@@ -13,6 +13,12 @@
   "bin": {
     "dice": "cli.js"
   },
+  "files": [
+    "app",
+    "cli.js",
+    "LICENSE",
+    "README.md"
+  ],
   "type": "module",
   "scripts": {
     "lint": "oxlint && oxfmt -c node_modules/@k03mad/oxlint-config/.oxfmtrc.json --check && tsc --noEmit",
